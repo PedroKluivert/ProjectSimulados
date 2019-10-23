@@ -7,6 +7,7 @@ public class Assunto {
     private String nome;
     private String DataCadastro;
     private int Quantidade;
+    private String cod_usuario;
 
     public int getId() {
         return id;
@@ -39,5 +40,13 @@ public class Assunto {
     public void setQuantidade(int Quantidade) {
         this.Quantidade = Quantidade;
     }
-    
+
+    public String getCod_usuario() {
+        return cod_usuario;
+    }
+
+    public void setCod_usuario(String cod_usuario) {
+        this.cod_usuario = cod_usuario;
+    }
+   
 }

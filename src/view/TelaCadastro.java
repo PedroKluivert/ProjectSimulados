@@ -108,7 +108,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         });
         getContentPane().add(Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 90, -1));
 
-        jLabelFUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cadastro.JPG"))); // NOI18N
+        jLabelFUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cadastro.png"))); // NOI18N
         getContentPane().add(jLabelFUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, -1));
 
         setSize(new java.awt.Dimension(416, 339));
