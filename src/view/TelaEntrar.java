@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import manipuladores.ManipuladorUsuario;
 
 public class TelaEntrar extends javax.swing.JFrame {
 
@@ -84,7 +85,14 @@ public class TelaEntrar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Trabalhando ainda nisso!");
+        ManipuladorUsuario MpUsu = new ManipuladorUsuario();
+        if(MpUsu.checkLogin(txtCodigo.getText(), new String(txtSenha.getText()))){
+            JOptionPane.showMessageDialog(null, "Bem vindo(a)!");
+            new Sistema().setVisible(true);
+            this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Dados inválidos!");
+        }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**

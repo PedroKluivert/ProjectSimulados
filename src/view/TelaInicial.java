@@ -34,6 +34,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jButtonEntrar = new javax.swing.JButton();
         jButtonInstrucao = new javax.swing.JButton();
         jButtonCreditos = new javax.swing.JButton();
+        jButtonSair = new javax.swing.JButton();
         jLabel_FUNDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,6 +84,16 @@ public class TelaInicial extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 90, -1));
 
+        jButtonSair.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jButtonSair.setText("Sair");
+        jButtonSair.setMargin(new java.awt.Insets(2, 20, 2, 20));
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonSair, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+
         jLabel_FUNDO.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/provinha.png"))); // NOI18N
         getContentPane().add(jLabel_FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 415, 313));
@@ -112,6 +123,11 @@ public class TelaInicial extends javax.swing.JFrame {
     private void jButtonCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreditosActionPerformed
         JOptionPane.showMessageDialog(rootPane, "Trabalhando ainda nisso!");
     }//GEN-LAST:event_jButtonCreditosActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        JOptionPane.showMessageDialog(null, "Encerrando o sistema!");
+        this.dispose();
+    }//GEN-LAST:event_jButtonSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,6 +169,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCreditos;
     private javax.swing.JButton jButtonEntrar;
     private javax.swing.JButton jButtonInstrucao;
+    private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_FUNDO;
     // End of variables declaration//GEN-END:variables

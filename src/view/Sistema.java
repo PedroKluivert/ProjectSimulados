@@ -27,18 +27,14 @@ public class Sistema extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
         jButtonCadastroAssunto = new javax.swing.JButton();
         jButtonCadastroQuestao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonSair = new javax.swing.JButton();
         FUNDO = new javax.swing.JLabel();
 
-        jButton1.setText("jButton1");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Cadastrar");
-        setEnabled(false);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -124,7 +120,6 @@ public class Sistema extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FUNDO;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonCadastroAssunto;
     private javax.swing.JButton jButtonCadastroQuestao;
     private javax.swing.JButton jButtonSair;
