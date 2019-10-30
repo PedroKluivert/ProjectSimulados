@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package view.Sistema;
+
+import modelo.Usuario;
+import view.TelaEntrar;
+import view.TelaInicial;
 
 /**
  *
@@ -11,13 +15,21 @@ package view;
  */
 public class Sistema extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Sistema
-     */
+    private Usuario usuario;
+    
     public Sistema() {
         initComponents();
+        usuario = this.getUsuario();
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,13 +51,18 @@ public class Sistema extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonCadastroAssunto.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jButtonCadastroAssunto.setText("Cadastrar assuntos");
+        jButtonCadastroAssunto.setText("-- Assuntos --");
+        jButtonCadastroAssunto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroAssuntoActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonCadastroAssunto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 200, -1));
         jButtonCadastroAssunto.getAccessibleContext().setAccessibleDescription("");
 
         jButtonCadastroQuestao.setBackground(new java.awt.Color(255, 255, 255));
         jButtonCadastroQuestao.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jButtonCadastroQuestao.setText("Cadastrar questões");
+        jButtonCadastroQuestao.setText("-- Questões --");
         jButtonCadastroQuestao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadastroQuestaoActionPerformed(evt);
@@ -82,6 +99,12 @@ public class Sistema extends javax.swing.JFrame {
         tela.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed
+
+    private void jButtonCadastroAssuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroAssuntoActionPerformed
+        Sistema_Assuntos SysAssTela = new Sistema_Assuntos();
+        SysAssTela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonCadastroAssuntoActionPerformed
 
     /**
      * @param args the command line arguments

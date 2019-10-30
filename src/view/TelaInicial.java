@@ -96,7 +96,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel_FUNDO.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/provinha.png"))); // NOI18N
-        getContentPane().add(jLabel_FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 415, 313));
+        getContentPane().add(jLabel_FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 313));
 
         getAccessibleContext().setAccessibleDescription("");
 
@@ -117,11 +117,15 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     private void jButtonInstrucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInstrucaoActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Trabalhando ainda nisso!");
+        Instrucoes Instrucao = new Instrucoes();
+        Instrucao.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonInstrucaoActionPerformed
 
     private void jButtonCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCreditosActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Trabalhando ainda nisso!");
+        Creditos TelaCreditos = new Creditos();
+        TelaCreditos.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonCreditosActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed

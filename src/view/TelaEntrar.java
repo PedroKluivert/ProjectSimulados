@@ -1,12 +1,22 @@
 package view;
 
+import view.Sistema.Sistema;
 import javax.swing.JOptionPane;
 import manipuladores.ManipuladorUsuario;
+import modelo.Usuario;
 
 public class TelaEntrar extends javax.swing.JFrame {
-
+    
+    private static Usuario usuario;
+    
     public TelaEntrar() {
         initComponents();
+        this.usuario = new Usuario();
+    }
+    
+    public static Usuario usuario() {
+        return TelaEntrar.usuario;
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -88,7 +98,9 @@ public class TelaEntrar extends javax.swing.JFrame {
         ManipuladorUsuario MpUsu = new ManipuladorUsuario();
         if(MpUsu.checkLogin(txtCodigo.getText(), new String(txtSenha.getText()))){
             JOptionPane.showMessageDialog(null, "Bem vindo(a)!");
-            new Sistema().setVisible(true);
+            this.usuario.setCod(txtCodigo.getText());
+            Sistema sys = new Sistema();
+            sys.setVisible(true);
             this.dispose();
         }else{
             JOptionPane.showMessageDialog(rootPane, "Dados inválidos!");

@@ -25,7 +25,7 @@ public class ManipuladorUsuario {
             
             stmt.executeUpdate();
             
-            JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucessor!");
+            JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Falha no cadastro!"+ex);
             Logger.getLogger(ManipuladorUsuario.class.getName()).log(Level.SEVERE, null, ex);
