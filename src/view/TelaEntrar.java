@@ -1,5 +1,9 @@
 package view;
 
+import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import view.Sistema.Sistema;
 import javax.swing.JOptionPane;
 import manipuladores.ManipuladorUsuario;
@@ -18,6 +22,12 @@ public class TelaEntrar extends javax.swing.JFrame {
         return TelaEntrar.usuario;
         
     }
+    
+    public static String getDateTime() { 
+	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+	Date date = new Date(); 
+	return dateFormat.format(date); 
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -57,6 +67,11 @@ public class TelaEntrar extends javax.swing.JFrame {
         getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 60, 30));
 
         txtSenha.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
         getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 120, 30));
 
         jButtonEntrar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -106,6 +121,21 @@ public class TelaEntrar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Dados inválidos!");
         }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            ManipuladorUsuario MpUsu = new ManipuladorUsuario();
+            if(MpUsu.checkLogin(txtCodigo.getText(), new String(txtSenha.getText()))){
+                JOptionPane.showMessageDialog(null, "Bem vindo(a)!");
+                this.usuario.setCod(txtCodigo.getText());
+                Sistema sys = new Sistema();
+                sys.setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Dados inválidos!");
+        }
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
 
     /**
      * @param args the command line arguments

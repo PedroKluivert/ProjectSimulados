@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import manipuladores.ManipuladorUsuario;
 import modelo.Usuario;
@@ -88,6 +89,11 @@ public class TelaCadastro extends javax.swing.JFrame {
                 txtSenhaActionPerformed(evt);
             }
         });
+        txtSenha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSenhaKeyPressed(evt);
+            }
+        });
         getContentPane().add(txtSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 130, 30));
 
         Cadastrar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -143,6 +149,19 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoActionPerformed
+
+    private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            Usuario usu = new Usuario();
+            ManipuladorUsuario MpUsu = new ManipuladorUsuario();
+            usu.setCod(txtCodigo.getText());
+            usu.setNome(txtNome.getText());
+            usu.setSenha(new String(txtSenha.getText()));
+            MpUsu.Cadastrar(usu);
+            new TelaCadastro().setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_txtSenhaKeyPressed
 
     /**
      * @param args the command line arguments

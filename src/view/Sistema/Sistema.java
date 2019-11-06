@@ -101,7 +101,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSairActionPerformed
 
     private void jButtonCadastroAssuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroAssuntoActionPerformed
-        Sistema_Assuntos SysAssTela = new Sistema_Assuntos();
+        SistemaAssuntos SysAssTela = new SistemaAssuntos();
         SysAssTela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCadastroAssuntoActionPerformed
