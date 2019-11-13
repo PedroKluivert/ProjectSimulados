@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Assunto;
+import modelo.Questao;
 import modelo.Usuario;
 
 /*
@@ -129,5 +130,6 @@ public class ManipuladorAssunto {
             ConnectionFactory.closeConnection(con, stmt);
     }
     }
+    
     
 }

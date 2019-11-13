@@ -91,7 +91,9 @@ public class Sistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastroQuestaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastroQuestaoActionPerformed
-        // TODO add your handling code here:
+        SistemaQuestoes SysQst = new SistemaQuestoes();
+        SysQst.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonCadastroQuestaoActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed

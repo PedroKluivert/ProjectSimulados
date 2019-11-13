@@ -62,6 +62,7 @@ public class SistemaAssuntos extends javax.swing.JFrame {
         jMenuItemVoltar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Sistema/Assuntos");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(INICIO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 430));

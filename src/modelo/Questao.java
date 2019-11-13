@@ -6,8 +6,16 @@ public class Questao {
     private String texto;
     private String tipo;
     private String resposta;
-    private Assunto Assunto;
+    private int id_Assunto;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getTexto() {
         return texto;
     }
@@ -30,6 +38,14 @@ public class Questao {
 
     public void setResposta(String resposta) {
         this.resposta = resposta;
+    }
+
+    public int getId_Assunto() {
+        return id_Assunto;
+    }
+
+    public void setId_Assunto(int id_Assunto) {
+        this.id_Assunto = id_Assunto;
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package view;
 
+import com.sun.glass.events.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +30,7 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelInicio = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButtonCadastrar = new javax.swing.JButton();
         jButtonEntrar = new javax.swing.JButton();
@@ -42,7 +44,19 @@ public class TelaInicial extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("TelaInicio"); // NOI18N
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelInicio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabelInicioKeyPressed(evt);
+            }
+        });
+        getContentPane().add(jLabelInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 310));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel1.setText("Bem vindo(a) ao Simulados Softaware!");
@@ -133,6 +147,31 @@ public class TelaInicial extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed
 
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        TelaInicial telinha = new TelaInicial();
+        if(evt.getKeyCode() == KeyEvent.VK_CONTROL && evt.getKeyCode() == KeyEvent.VK_C){
+            JOptionPane.showMessageDialog(null, "Ctrl+C");
+           // telinha.jButtonCadastrarActionPerformed(evt);
+            //getRootPane().setDefaultButton(jButtonCadastrar);
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_CONTROL && evt.getKeyCode() == KeyEvent.VK_E){
+            jButtonEntrar.doClick();
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_CONTROL && evt.getKeyCode() == KeyEvent.VK_I){
+            jButtonInstrucao.doClick();
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_CONTROL && evt.getKeyCode() == KeyEvent.VK_H){
+            jButtonCreditos.doClick();
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_END){
+            jButtonSair.doClick();
+        }
+    }//GEN-LAST:event_formKeyPressed
+
+    private void jLabelInicioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabelInicioKeyPressed
+       
+    }//GEN-LAST:event_jLabelInicioKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -175,6 +214,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton jButtonInstrucao;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelInicio;
     private javax.swing.JLabel jLabel_FUNDO;
     // End of variables declaration//GEN-END:variables
 }
