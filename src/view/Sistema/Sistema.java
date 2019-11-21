@@ -8,6 +8,7 @@ package view.Sistema;
 import modelo.Usuario;
 import view.TelaEntrar;
 import view.TelaInicial;
+import view.TelaInicial2;
 
 /**
  *
@@ -97,7 +98,7 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCadastroQuestaoActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
-        TelaInicial tela = new TelaInicial();
+        TelaInicial2 tela = new TelaInicial2();
         tela.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonSairActionPerformed

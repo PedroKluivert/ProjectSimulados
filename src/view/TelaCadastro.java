@@ -130,7 +130,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
-        TelaInicial Inicio = new TelaInicial();
+        TelaInicial2 Inicio = new TelaInicial2();
         Inicio.setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarActionPerformed

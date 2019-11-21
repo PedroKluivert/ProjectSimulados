@@ -81,7 +81,7 @@ public class TelaEntrar extends javax.swing.JFrame {
                 jButtonEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 270, -1, -1));
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, -1));
 
         jButtonVoltar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonVoltar.setText("Voltar");
@@ -90,12 +90,12 @@ public class TelaEntrar extends javax.swing.JFrame {
                 jButtonVoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 270, 70, -1));
+        getContentPane().add(jButtonVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 70, -1));
 
         FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icone.png"))); // NOI18N
         getContentPane().add(FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 360));
 
-        setSize(new java.awt.Dimension(416, 339));
+        setSize(new java.awt.Dimension(400, 339));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -104,7 +104,7 @@ public class TelaEntrar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
-        TelaInicial tela = new TelaInicial();
+        TelaInicial2 tela = new TelaInicial2();
         tela.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonVoltarActionPerformed

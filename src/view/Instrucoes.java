@@ -53,7 +53,7 @@ public class Instrucoes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarActionPerformed
-        TelaInicial Inicio = new TelaInicial();
+        TelaInicial2 Inicio = new TelaInicial2();
         Inicio.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonVoltarActionPerformed
