@@ -25,14 +25,17 @@ public class ManipuladorQuestao {
         int ID = 0;
         
         try {
-            stmt = con.prepareStatement("SELECT id FROM assuntos WHERE cod_usuario = (?) AND "
+            stmt = con.prepareStatement("SELECT * FROM assuntos WHERE cod_usuario = (?) AND "
                     + "nome = (?)");
             stmt.setString(1, usuario.getCod());
             stmt.setString(2, Nome_Assunto);
             
             rs = stmt.executeQuery();
-            
-            ID = rs.getInt("id");
+            while(rs.next()){
+                if(rs.getString("nome").equals(Nome_Assunto)){
+                    ID = rs.getInt("id");
+                } 
+            }
             
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "ERROR: "+ex);

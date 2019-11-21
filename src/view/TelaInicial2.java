@@ -61,7 +61,7 @@ public class TelaInicial2 extends javax.swing.JFrame {
                 jButtonCadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+        getContentPane().add(jButtonCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, -1));
 
         jButtonEntrar.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonEntrar.setText("Entrar");
@@ -70,7 +70,7 @@ public class TelaInicial2 extends javax.swing.JFrame {
                 jButtonEntrarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 103, -1));
+        getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 103, -1));
 
         jButtonCreditos.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonCreditos.setText("Créditos");
@@ -79,7 +79,7 @@ public class TelaInicial2 extends javax.swing.JFrame {
                 jButtonCreditosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 103, -1));
+        getContentPane().add(jButtonCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 103, -1));
 
         jButtonInstrucao.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonInstrucao.setText("Instruções");
@@ -88,7 +88,7 @@ public class TelaInicial2 extends javax.swing.JFrame {
                 jButtonInstrucaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonInstrucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 103, -1));
+        getContentPane().add(jButtonInstrucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 103, -1));
 
         jButtonSair.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jButtonSair.setText("Sair");

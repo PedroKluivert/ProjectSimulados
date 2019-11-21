@@ -41,6 +41,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         txtSenha = new javax.swing.JPasswordField();
         Cadastrar = new javax.swing.JButton();
         Voltar = new javax.swing.JButton();
+        Entrar = new javax.swing.JButton();
         jLabelFUNDO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -103,7 +104,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 CadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(Cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        getContentPane().add(Cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         Voltar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         Voltar.setText("Voltar");
@@ -112,7 +113,16 @@ public class TelaCadastro extends javax.swing.JFrame {
                 VoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 90, -1));
+        getContentPane().add(Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 90, -1));
+
+        Entrar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Entrar.setText("Entrar");
+        Entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Entrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 90, -1));
 
         jLabelFUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cadastro.png"))); // NOI18N
         getContentPane().add(jLabelFUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, -1));
@@ -163,6 +173,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtSenhaKeyPressed
 
+    private void EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarActionPerformed
+        TelaEntrar tela = new TelaEntrar();
+        tela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EntrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,6 +216,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cadastrar;
+    private javax.swing.JButton Entrar;
     private javax.swing.JButton Voltar;
     private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelFUNDO;
