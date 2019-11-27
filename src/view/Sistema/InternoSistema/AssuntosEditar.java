@@ -39,7 +39,7 @@ public class AssuntosEditar extends javax.swing.JInternalFrame {
         txtNovoNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtNovaQntd = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonOK = new javax.swing.JButton();
         FUNDO = new javax.swing.JLabel();
 
         setClosable(true);
@@ -71,11 +71,11 @@ public class AssuntosEditar extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonOK.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButtonOK.setText("OK");
+        jButtonOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonOKActionPerformed(evt);
             }
         });
 
@@ -89,7 +89,7 @@ public class AssuntosEditar extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtNovaQntd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(jButtonOK))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -118,7 +118,7 @@ public class AssuntosEditar extends javax.swing.JInternalFrame {
                 .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jButtonOK)
                 .addContainerGap())
         );
 
@@ -131,7 +131,7 @@ public class AssuntosEditar extends javax.swing.JInternalFrame {
         setBounds(0, 0, 400, 300);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOKActionPerformed
         manipuladores.ManipuladorAssunto MpAss = new ManipuladorAssunto();
         Assunto assunto = new Assunto();
         int id_assunto;
@@ -146,7 +146,7 @@ public class AssuntosEditar extends javax.swing.JInternalFrame {
         assunto.setCod_usuario(TelaEntrar.usuario().getCod());
         MpAss.Edicao(assunto);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonOKActionPerformed
 
     private void txtNovaQntdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNovaQntdActionPerformed
         // TODO add your handling code here:
@@ -174,7 +174,7 @@ public class AssuntosEditar extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FUNDO;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonOK;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

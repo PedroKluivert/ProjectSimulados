@@ -11,6 +11,7 @@ import manipuladores.ManipuladorQuestao;
 import modelo.Questao;
 import modelo.Usuario;
 import view.Sistema.InternoSistema.ListagemQuestoes;
+import view.Sistema.InternoSistema.QuestoesEditar;
 import view.Sistema.InternoSistema.QuestoesExcluir;
 import view.Sistema.InternoSistema.QuestoesListagem;
 import view.TelaEntrar;
@@ -164,6 +165,11 @@ public class SistemaQuestoes extends javax.swing.JFrame {
         jMenuQuestao.setText("Questão");
 
         jMenuItemEditar.setText("Editar");
+        jMenuItemEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEditarActionPerformed(evt);
+            }
+        });
         jMenuQuestao.add(jMenuItemEditar);
 
         jMenuItemExcluir.setText("Excluir");
@@ -238,6 +244,11 @@ public class SistemaQuestoes extends javax.swing.JFrame {
         Sys.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItemVoltarActionPerformed
+
+    private void jMenuItemEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEditarActionPerformed
+        QuestoesEditar QstEdite = new QuestoesEditar();
+        QstEdite.setVisible(true);
+    }//GEN-LAST:event_jMenuItemEditarActionPerformed
 
     /**
      * @param args the command line arguments

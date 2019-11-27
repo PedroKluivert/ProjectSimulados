@@ -102,7 +102,7 @@ public class ManipuladorAssunto {
             
             JOptionPane.showMessageDialog(null, "Assunto atualizado!");
         } catch (SQLException ex) {
-            //JOptionPane.showMessageDialog(null, "ERROR: "+ex);
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex);
             System.out.println(ex);
         } finally{
             ConnectionFactory.closeConnection(con, stmt);

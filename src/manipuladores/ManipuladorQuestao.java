@@ -128,6 +128,45 @@ public class ManipuladorQuestao {
         return ListaQuestoes;
     }
     
+    public void Edicao(Questao questao){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement("UPDATE questoes SET texto = (?)"
+                    + " WHERE id = (?) AND cod_usuario = (?)");
+            stmt.setString(1, questao.getTexto());
+            stmt.setInt(2, questao.getId());
+            stmt.setString(3, questao.getCod_usuario());
+            
+            stmt.executeUpdate();
+            
+            stmt = con.prepareStatement("UPDATE questoes SET tipo = (?)"
+                    + " WHERE id = (?) AND cod_usuario = (?)");
+            JOptionPane.showMessageDialog(null, questao.getTipo());
+            stmt.setString(1, questao.getTipo());
+            stmt.setInt(2, questao.getId());
+            stmt.setString(3, questao.getCod_usuario());
+            
+            stmt.executeUpdate();
+            
+            stmt = con.prepareStatement("UPDATE questoes SET resposta = (?)"
+                    + " WHERE id = (?) AND cod_usuario = (?)");
+            stmt.setString(1, questao.getResposta());
+            stmt.setInt(2, questao.getId());
+            stmt.setString(3, questao.getCod_usuario());
+            
+            stmt.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Questão atualizada!");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex);
+            System.out.println(ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt);
+    }
+    }
+    
     public void Excluir(Questao questao){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;

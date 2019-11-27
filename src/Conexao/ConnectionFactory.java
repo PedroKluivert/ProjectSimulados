@@ -13,7 +13,7 @@ public class ConnectionFactory {
     private static final String DRIVER = "org.postgresql.Driver";
     private static final String URL = "jdbc:postgresql://localhost:5432/Simulados";
     private static final String USER = "postgres";
-    private static final String PASS = "tr3v1ulk";
+    private static final String PASS = "ifpb";
     
     public static Connection getConnection(){
         try {
