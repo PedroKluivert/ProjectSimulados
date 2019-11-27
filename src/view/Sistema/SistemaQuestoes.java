@@ -6,9 +6,13 @@
 package view.Sistema;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import manipuladores.ManipuladorQuestao;
 import modelo.Questao;
 import modelo.Usuario;
+import view.Sistema.InternoSistema.ListagemQuestoes;
+import view.Sistema.InternoSistema.QuestoesExcluir;
+import view.Sistema.InternoSistema.QuestoesListagem;
 import view.TelaEntrar;
 
 /**
@@ -50,8 +54,9 @@ public class SistemaQuestoes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        icon = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        icon = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -63,7 +68,6 @@ public class SistemaQuestoes extends javax.swing.JFrame {
         textAreaResposta = new java.awt.TextArea();
         txtAssunto = new javax.swing.JTextField();
         jButtonCadastrar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         FUNDO = new javax.swing.JLabel();
         INICIO = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -78,25 +82,38 @@ public class SistemaQuestoes extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconQuestion.jpg"))); // NOI18N
-        getContentPane().add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 100, 124));
-
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/IconQuestion.jpg"))); // NOI18N
+        icon.setMaximumSize(new java.awt.Dimension(250, 290));
+        icon.setMinimumSize(new java.awt.Dimension(250, 290));
+        icon.setPreferredSize(new java.awt.Dimension(250, 290));
+        jPanel1.add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 0, 130, 170));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel6.setText("Cadastro de Questões");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel1.setText("ID");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 51, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Pergunta");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 122, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("Tipo");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 272, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setText("Resposta");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("Assunto da questão");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 317, -1, -1));
 
         txtID.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         txtID.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +121,7 @@ public class SistemaQuestoes extends javax.swing.JFrame {
                 txtIDActionPerformed(evt);
             }
         });
+        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 74, 40, 30));
 
         choiceTipos.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         choiceTipos.setName("Tipos"); // NOI18N
@@ -112,16 +130,21 @@ public class SistemaQuestoes extends javax.swing.JFrame {
                 choiceTiposMouseClicked(evt);
             }
         });
+        jPanel1.add(choiceTipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 272, 214, -1));
 
         textAreaQuestao.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         textAreaQuestao.setMaximumSize(new java.awt.Dimension(250, 60));
         textAreaQuestao.setMinimumSize(new java.awt.Dimension(250, 60));
+        jPanel1.add(textAreaQuestao, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 149, 290, 100));
 
+        textAreaResposta.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         textAreaResposta.setMaximumSize(new java.awt.Dimension(200, 60));
         textAreaResposta.setMinimumSize(new java.awt.Dimension(200, 60));
+        jPanel1.add(textAreaResposta, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, 180, 100));
 
         txtAssunto.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         txtAssunto.setPreferredSize(new java.awt.Dimension(50, 30));
+        jPanel1.add(txtAssunto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 343, 175, -1));
 
         jButtonCadastrar.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jButtonCadastrar.setText("Cadastrar");
@@ -130,79 +153,9 @@ public class SistemaQuestoes extends javax.swing.JFrame {
                 jButtonCadastrarActionPerformed(evt);
             }
         });
+        jPanel1.add(jButtonCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel6.setText("Cadastro de Questões");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addContainerGap(409, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(txtAssunto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(choiceTipos, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1)
-                            .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(320, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButtonCadastrar))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(textAreaQuestao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(40, 40, 40)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(textAreaResposta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textAreaResposta, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textAreaQuestao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(choiceTipos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAssunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCadastrar))
-                .addGap(107, 107, 107))
-        );
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 580, 480));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 630, 480));
 
         FUNDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Question.jpg"))); // NOI18N
         getContentPane().add(FUNDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 600));
@@ -246,11 +199,14 @@ public class SistemaQuestoes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarActionPerformed
-        // TODO add your handling code here:
+        ListagemQuestoes QstListar = new ListagemQuestoes();
+        QstListar.setVisible(true);
     }//GEN-LAST:event_jMenuItemListarActionPerformed
 
     private void jMenuItemExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExcluirActionPerformed
-        // TODO add your handling code here:
+        QuestoesExcluir ExclusaoQst = new QuestoesExcluir();
+        icon.add(ExclusaoQst);
+        ExclusaoQst.setVisible(true);
     }//GEN-LAST:event_jMenuItemExcluirActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
@@ -273,6 +229,7 @@ public class SistemaQuestoes extends javax.swing.JFrame {
         questao.setTipo(choiceTipos.getSelectedItem());
         int ID_Assunto = MpQst.busca_ID_Assunto(getUsuario(), txtAssunto.getText());
         questao.setId_Assunto(ID_Assunto);
+        questao.setCod_usuario(getUsuario().getCod());
         MpQst.cadastrar(questao);
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 

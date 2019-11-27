@@ -7,6 +7,7 @@ public class Questao {
     private String tipo;
     private String resposta;
     private int id_Assunto;
+    private String cod_usuario;
 
     public int getId() {
         return id;
@@ -46,6 +47,14 @@ public class Questao {
 
     public void setId_Assunto(int id_Assunto) {
         this.id_Assunto = id_Assunto;
+    }
+
+    public String getCod_usuario() {
+        return cod_usuario;
+    }
+
+    public void setCod_usuario(String cod_usuario) {
+        this.cod_usuario = cod_usuario;
     }
     
 }
