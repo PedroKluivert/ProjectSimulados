@@ -152,8 +152,6 @@ public class TelaCadastro extends javax.swing.JFrame {
        usu.setNome(txtNome.getText());
        usu.setSenha(new String(txtSenha.getText()));
        MpUsu.Cadastrar(usu);
-       new TelaCadastro().setVisible(true);
-       this.dispose();
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed

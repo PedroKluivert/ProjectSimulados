@@ -50,26 +50,35 @@ public class ManipuladorQuestao {
     public void cadastrar(Questao questao){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
+        ResultSet rs = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO questoes "
-                    + "(id, texto, tipo, resposta, id_assunto, cod_usuario)"
-                    + " VALUES (?, ?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("SELECT * FROM questoes WHERE id = ?");
             stmt.setInt(1, questao.getId());
-            stmt.setString(2, questao.getTexto());
-            stmt.setString(3, questao.getTipo());
-            stmt.setString(4, questao.getResposta());
-            stmt.setInt(5, questao.getId_Assunto());
-            stmt.setString(6, questao.getCod_usuario());
+            rs = stmt.executeQuery();
             
-            stmt.executeUpdate();
-            
-            JOptionPane.showMessageDialog(null, "Questão cadastrada!");
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "ID indisponível!");
+            } else {
+                stmt = con.prepareStatement("INSERT INTO questoes "
+                        + "(id, texto, tipo, resposta, id_assunto, cod_usuario)"
+                        + " VALUES (?, ?, ?, ?, ?, ?)");
+                stmt.setInt(1, questao.getId());
+                stmt.setString(2, questao.getTexto());
+                stmt.setString(3, questao.getTipo());
+                stmt.setString(4, questao.getResposta());
+                stmt.setInt(5, questao.getId_Assunto());
+                stmt.setString(6, questao.getCod_usuario());
+
+                stmt.executeUpdate();
+
+                JOptionPane.showMessageDialog(null, "Questão cadastrada!");
+            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Falha no cadastro!"+ex);
             Logger.getLogger(ManipuladorAssunto.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
-            ConnectionFactory.closeConnection(con, stmt);
+            ConnectionFactory.closeConnection(con, stmt, rs);
         }
     }
     

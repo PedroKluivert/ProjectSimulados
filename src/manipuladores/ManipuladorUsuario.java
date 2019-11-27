@@ -16,8 +16,16 @@ public class ManipuladorUsuario {
     public void Cadastrar(Usuario usuario){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
+        ResultSet rs = null;
         
         try {
+            stmt = con.prepareStatement("SELECT * FROM usuarios WHERE cod = ?");;;
+            stmt.setString(1, usuario.getCod());
+            rs = stmt.executeQuery();
+            
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "Código indisponível!");
+            } else {
             stmt = con.prepareStatement("INSERT INTO usuarios (cod, nome, senha) VALUES (?, ?, ?)");
             stmt.setString(1, usuario.getCod());
             stmt.setString(2, usuario.getNome());
@@ -26,11 +34,12 @@ public class ManipuladorUsuario {
             stmt.executeUpdate();
             
             JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!");
+        }    
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Falha no cadastro!"+ex);
             Logger.getLogger(ManipuladorUsuario.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
-            ConnectionFactory.closeConnection(con, stmt);
+            ConnectionFactory.closeConnection(con, stmt, rs);
         }
     }
     

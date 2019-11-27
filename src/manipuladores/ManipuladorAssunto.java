@@ -22,24 +22,32 @@ public class ManipuladorAssunto {
     public void cadastrar(Assunto assunto){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
+        ResultSet rs = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO assuntos "
-                    + "(id, nome, datacadastro, quantidade, cod_usuario) VALUES (?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("SELECT * FROM assuntos WHERE id = ?");
             stmt.setInt(1, assunto.getId());
-            stmt.setString(2, assunto.getNome());
-            stmt.setString(3, assunto.getDataCadastro());
-            stmt.setInt(4, assunto.getQuantidade());
-            stmt.setString(5, assunto.getCod_usuario());
-            
-            stmt.executeUpdate();
-            
-            JOptionPane.showMessageDialog(null, "Assunto cadastrado!");
+            rs = stmt.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null, "ID indisponível");
+            } else {
+                stmt = con.prepareStatement("INSERT INTO assuntos "
+                        + "(id, nome, datacadastro, quantidade, cod_usuario) VALUES (?, ?, ?, ?, ?)");
+                stmt.setInt(1, assunto.getId());
+                stmt.setString(2, assunto.getNome());
+                stmt.setString(3, assunto.getDataCadastro());
+                stmt.setInt(4, assunto.getQuantidade());
+                stmt.setString(5, assunto.getCod_usuario());
+
+                stmt.executeUpdate();
+                
+                JOptionPane.showMessageDialog(null, "Assunto cadastrado!");
+            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Falha no cadastro!"+ex);
             Logger.getLogger(ManipuladorAssunto.class.getName()).log(Level.SEVERE, null, ex);
         } finally{
-            ConnectionFactory.closeConnection(con, stmt);
+            ConnectionFactory.closeConnection(con, stmt, rs);
         }
     }
     
