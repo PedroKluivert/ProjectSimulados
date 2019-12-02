@@ -48,7 +48,7 @@ public class QuestoesEditar extends javax.swing.JFrame {
         jButtonFechar = new javax.swing.JButton();
         FUNDO = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Edição");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

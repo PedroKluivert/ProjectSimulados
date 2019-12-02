@@ -148,9 +148,9 @@ public class Creditos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 
-    private static class TelaIniciail extends TelaInicial {
+    private static class TelaIniciail2 extends TelaInicial2 {
 
-        public TelaIniciail() {
+        public TelaIniciail2() {
         }
     }
 }

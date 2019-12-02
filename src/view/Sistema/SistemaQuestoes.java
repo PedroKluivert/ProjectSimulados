@@ -13,7 +13,6 @@ import modelo.Usuario;
 import view.Sistema.InternoSistema.ListagemQuestoes;
 import view.Sistema.InternoSistema.QuestoesEditar;
 import view.Sistema.InternoSistema.QuestoesExcluir;
-import view.Sistema.InternoSistema.QuestoesListagem;
 import view.TelaEntrar;
 
 /**

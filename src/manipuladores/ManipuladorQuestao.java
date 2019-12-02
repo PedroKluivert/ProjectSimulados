@@ -82,28 +82,6 @@ public class ManipuladorQuestao {
         }
     }
     
-//    public List<Integer> IDs_Assuntos(Usuario usuario){
-//        Connection con = ConnectionFactory.getConnection();
-//        PreparedStatement stmt = null;
-//        ResultSet rs = null;
-//        List<Integer> ListaIDsAssuntos = new ArrayList<Integer>();
-//        try {
-//            stmt = con.prepareStatement("SELECT * FROM assuntos WHERE cod_usuario = (?)");
-//            stmt.setString(1, usuario.getCod());
-//        
-//            rs = stmt.executeQuery();
-//            while(rs.next()){
-//                ListaIDsAssuntos.add(rs.getInt("id"));
-//            }
-//        }catch (SQLException ex) {
-//            System.out.println(ex);
-//            JOptionPane.showMessageDialog(null, "ERROR: "+ex);
-//        }finally{
-//            ConnectionFactory.closeConnection(con, stmt, rs);
-//        }
-//        
-//        return ListaIDsAssuntos;
-//    }
     
     public List<Questao> Listagem(Usuario usuario){
         Connection con = ConnectionFactory.getConnection();
@@ -195,5 +173,55 @@ public class ManipuladorQuestao {
         } finally{
             ConnectionFactory.closeConnection(con, stmt);
     }
+    }
+    
+    public int countQuestao_Assunto(int ID_Assunto){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        int count = 0;
+        
+        try {
+            stmt = con.prepareStatement("SELECT COUNT(id) FROM questoes WHERE id_assunto = (?)");
+            stmt.setInt(1, ID_Assunto);
+            
+            rs = stmt.executeQuery();
+            if(rs.next()){
+                count = rs.getInt("count");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex);
+            System.out.println(ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+        return count;
+    }
+    
+    public List<Questao> QuestoesProva(List<Assunto> Assuntos){
+        List<Questao> Questoes = new ArrayList<Questao>();
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            for (Assunto assunto : Assuntos) {
+                stmt = con.prepareStatement("SELECT * FROM questoes WHERE id_assunto = (?) LIMIT (?)");
+                stmt.setInt(1, assunto.getId());
+                stmt.setInt(2, assunto.getQuantidade());
+                rs = stmt.executeQuery();
+                while(rs.next()){
+                    Questao questao = new Questao();
+                    questao.setTexto(rs.getString("texto"));
+                    Questoes.add(questao);
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "ERROR: "+ex);
+            System.out.println(ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+    }
+        return Questoes;
     }
 }

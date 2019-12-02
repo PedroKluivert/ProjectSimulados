@@ -6,8 +6,8 @@
 package view.Sistema;
 
 import modelo.Usuario;
+import view.Sistema.InternoSistema.Simulados;
 import view.TelaEntrar;
-import view.TelaInicial;
 import view.TelaInicial2;
 
 /**
@@ -42,6 +42,7 @@ public class Sistema extends javax.swing.JFrame {
 
         jButtonCadastroAssunto = new javax.swing.JButton();
         jButtonCadastroQuestao = new javax.swing.JButton();
+        jButtonSimulado = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButtonSair = new javax.swing.JButton();
         FUNDO = new javax.swing.JLabel();
@@ -70,6 +71,15 @@ public class Sistema extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonCadastroQuestao, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 200, -1));
+
+        jButtonSimulado.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jButtonSimulado.setText("Criar Simulado");
+        jButtonSimulado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSimuladoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonSimulado, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel1.setText("OU");
@@ -108,6 +118,12 @@ public class Sistema extends javax.swing.JFrame {
         SysAssTela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButtonCadastroAssuntoActionPerformed
+
+    private void jButtonSimuladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimuladoActionPerformed
+        Simulados simulados = new Simulados();
+        simulados.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonSimuladoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +165,7 @@ public class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCadastroAssunto;
     private javax.swing.JButton jButtonCadastroQuestao;
     private javax.swing.JButton jButtonSair;
+    private javax.swing.JButton jButtonSimulado;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
